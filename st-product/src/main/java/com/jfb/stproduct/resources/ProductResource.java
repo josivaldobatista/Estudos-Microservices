@@ -27,7 +27,7 @@ public class ProductResource {
     return ResponseEntity.ok().body(dto);
   }
 
-  @GetMapping(value = "/paged")
+  @GetMapping
   public ResponseEntity<Page<ProductDTO>> findAllPaged(
       @RequestParam(value = "page", defaultValue = "0") Integer page,
       @RequestParam(value = "linesPerPage", defaultValue = "12") Integer linesPerPage,
