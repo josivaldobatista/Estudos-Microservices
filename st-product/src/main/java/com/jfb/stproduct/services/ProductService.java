@@ -19,7 +19,7 @@ public class ProductService {
 
   @Autowired
   private ProductRepository repository;
-  
+
   @Transactional(readOnly = true)
   public ProductDTO findById(Long id) {
     Optional<Product> obj = repository.findById(id);
@@ -33,5 +33,4 @@ public class ProductService {
     repository.findProductsCategories(page.stream().collect(Collectors.toList()));
     return page.map(x -> new ProductDTO(x, x.getCategories()));
   }
-  
 }
